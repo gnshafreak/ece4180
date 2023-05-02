@@ -1,0 +1,7 @@
+data/PinDetect.lib.i
+data/main.cpp.i
+data/FFT.lib.i
+data/MAX4466.lib.i
+data/mbed.bld.i
+data/mbed-rtos.lib.i
+data/4DGL-uLCD-SE.lib.i

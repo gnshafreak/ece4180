@@ -1,0 +1,11 @@
+^BUILD$
+^.mbed$
+^compile_commands.json$
+^.clangd$
+^.cache$
+^mbed$
+^4DGL-uLCD-SE$
+^FFT$
+^MAX4466$
+^PinDetect$
+^mbed-rtos$
