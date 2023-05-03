@@ -308,6 +308,6 @@ The main thread uses an FFT library to read analog microphone input and calculat
 
 ### Conclusion
 
-Although we couldn’t combine the microphone input, single tone harmonizing, and LCD display with the chord synthesizer due to the mbed’s limited processing power, we were able to have each of the two processes run separately. In order to prevent feedback between the speaker and mic, we had to increase the physical distance between the two and control the speaker volume.
+We were able to successfully meet all the initial goals of our project, being creating a tuner that identified frequencies coming through a microphone peripheral and a harmonizer that would emit harmonic frequencies, creating chords. However, we ran into the significant bottleneck of the mbed's limited processing power. To achieve the full chord harmonizing functionality while also updating the LCD, we had to use two mbed to run our various threads. Additionally, in order to prevent feedback between the speaker and mic, we had to increase the physical distance between the two and control the speaker volume. Perhaps Kanye West will enlist our services for his next album.
 
 **Future work** would include using a microcontroller with more processing power and integrating the different functionalities. We could also implement a faster frequency extraction method to decrease the computational load on the processor.
