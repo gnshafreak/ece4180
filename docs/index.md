@@ -45,8 +45,6 @@ The dip switches are used to control what interval the speaker will be harmonizi
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/circuit.png?raw=true)
 
-
-
 ### Source Code
 
 The following code implements the harmonizing tuner using the parts listed above. Since there are many componenets incorperated in out design, we use the RTOS library in order to run and manage different threads for each sub-process. 
@@ -150,37 +148,6 @@ The following code implements the harmonizing tuner using the parts listed above
     
         }
         Thread::wait(100);
-    }
-    
-    void ulcd_update(void const *argument) {
-        int freq[] = {WHITE, WHITE, WHITE, WHITE, WHITE,WHITE, WHITE, WHITE};
-        
-        int n;
-        int prev_note = 0;
-        int prev_octave;
-        while(1) {
-            if (pb1) {freq[0] = RED;} else {freq[0] = WHITE;}
-            if (pb2) {freq[1] = RED;} else {freq[1] = WHITE;}
-            if (pb3) {freq[2] = RED;} else {freq[2] = WHITE;}
-            if (pb4) {freq[3] = RED;} else {freq[3] = WHITE;}
-            if (pb5) {freq[4] = RED;} else {freq[4] = WHITE;}
-            if (pb6) {freq[5] = RED;} else {freq[5] = WHITE;}
-            if (pb7) {freq[6] = RED;} else {freq[6] = WHITE;}
-            if (pb8) {freq[7] = RED;} else {freq[7] = WHITE;}
-            pc.printf("pb8: %f", pb8);
-
-
-​    
-            uLCD.filled_circle(5, 122, 3, freq[0]);
-            uLCD.filled_circle(20, 117, 3, freq[1]);
-            uLCD.filled_circle(35, 112, 3, freq[2]);
-            uLCD.filled_circle(50, 107, 3, freq[3]);
-            uLCD.filled_circle(65, 102, 3, freq[4]);
-            uLCD.filled_circle(80, 97, 3, freq[5]);
-            uLCD.filled_circle(95, 92, 3, freq[6]);
-            uLCD.filled_circle(110, 87, 3, freq[7]);
-    
-        }
     }
 
 
