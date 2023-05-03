@@ -22,7 +22,8 @@ Our project is both a harmonizer and a tuner that uses different components we b
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/circuit.png?raw=true)
 
 ### Source Code
-![](https://emgithub.com/gnshafreak/ece4180/blob/main/harmonece%20(chordless)/main.cpp?raw=true)
+
+<script src="http://gist-it.appspot.com/https://github.com/gnshafreak/ece4180/blob/main/harmonece%20(chordless)/main.cpp"></script>
 
 
 ### Photos/Videos
