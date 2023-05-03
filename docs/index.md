@@ -23,6 +23,8 @@ The microcontroller will run the program that interfaces with the various I/O co
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/pinout.png?raw=true)
 
+###### *pushbuttons wired to pins 5-12
+
 The Class D amplifier is used to amplify the PWM output signal going to the speaker. This singal is playing various frequencies that will be harmonizing with the user input. The volume can be controlled by adding a potentionmeter to the volume output. 
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/classdamp.png?raw=true)
@@ -37,7 +39,7 @@ The uLCD screen is used for the interface. It will display the current siwtches 
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/lcd.png?raw=true)
 
-The dip switches are used to control what interval the speaker will be harmonizing at based on the input frequency from the microphone. 
+The dip switches are used to control what interval the speaker will be harmonizing at based on the input frequency from the microphone. They are connected to the MBED pins 5-12.
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/dip.png?raw=true)
 
