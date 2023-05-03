@@ -39,6 +39,8 @@ The uLCD screen is used for the interface. It will display the current siwtches 
 
 The dip switches are used to control what interval the speaker will be harmonizing at based on the input frequency from the microphone. 
 
+![](https://github.com/gnshafreak/ece4180/blob/main/docs/dip.png?raw=true)
+
 ### Schematic
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/circuit.png?raw=true)
