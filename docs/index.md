@@ -1,4 +1,4 @@
-# Spring '23 Final Project - HarmonECE
+Spring '23 Final Project - HarmonECE
 
 ## Madeline Belew, Noah Horton, Gabriel Shafiq
 
@@ -61,8 +61,6 @@ The following code implements the harmonizing tuner using the parts listed above
     #include <math.h>
     #include "I2S.h"
 
-
-​    
     DigitalIn pb1(p5);
     DigitalIn pb2(p6);
     DigitalIn pb3(p7);
@@ -88,8 +86,6 @@ The following code implements the harmonizing tuner using the parts listed above
     std::string notes[] = {"C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"};
     float notefreqs[] = {16.35,17.32,18.35,19.45,20.60,21.93,23.12,24.50,25.96,27.50,29.14,30.87};
 
-
-​    
     volatile float readfreq = 0.00;
     volatile float octave = 0;
     volatile int note = 0;
@@ -98,10 +94,6 @@ The following code implements the harmonizing tuner using the parts listed above
     volatile int m=0;
     volatile int counter = 0;
 
-
-​    
-​    
-​    
     void dopb(void const *arguments) {
         float freq1 = 0;
         float freq2 = 0;
@@ -152,8 +144,6 @@ The following code implements the harmonizing tuner using the parts listed above
         Thread::wait(100);
     }
 
-
-​    
     //Print frequencies of notes, detected freq, and circle display graphic to LCD
     void ulcd(void const *arguments) {
         int freq[] = {WHITE, WHITE, WHITE, WHITE, WHITE,WHITE, WHITE, WHITE};
@@ -213,8 +203,6 @@ The following code implements the harmonizing tuner using the parts listed above
                 uLCD.filled_rectangle(30, 60, 100, 80, 0x00FF00);
             }
 
-
-​    
             //uLCD.printf("        %f", octave);
     
             if (pb1) {freq[0] = RED;} else {freq[0] = WHITE;}
@@ -235,16 +223,12 @@ The following code implements the harmonizing tuner using the parts listed above
             uLCD.filled_circle(95, 92, 3, freq[6]);
             uLCD.filled_circle(110, 87, 3, freq[7]);
 
-
-​    
             prev_note = note;
             Thread::wait(1);
         }
     }
+        
 
-
-​    
-​    
     int main() {
         //set up pindetect
         pb1.mode(PullUp);
@@ -280,8 +264,6 @@ The following code implements the harmonizing tuner using the parts listed above
         osThreadSetPriority(osThreadGetId(), osPriorityHigh);
         //Loop and constantly be finding frequency of signal
 
-
-​    
         while (1) { 
             my_time.reset();
             my_time.start();
