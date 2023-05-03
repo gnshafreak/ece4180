@@ -23,7 +23,7 @@ Our project is both a harmonizer and a tuner that uses different components we b
 
 ### Source Code
 
-https://github.com/gnshafreak/ece4180/blob/44f9a57a1d9cdbf2a631d21dd6e3d84dc5162c20/harmonece%20(chordless)/main.cpp#L284
+https://github.com/gnshafreak/ece4180/blob/44f9a57a1d9cdbf2a631d21dd6e3d84dc5162c20/harmonece%20(chordless)/main.cpp#L1-L284
 
 ### Photos/Videos
 
