@@ -25,13 +25,13 @@ The microcontroller will run the program that interfaces with the various I/O co
 
 ###### *pushbuttons wired to pins 5-12
 
-The Class D amplifier is used to amplify the PWM output signal going to the speaker. This singal is playing various frequencies that will be harmonizing with the user input. The volume can be controlled by adding a potentionmeter to the volume output. 
+The Class D amplifier is used to amplify the PWM output signal going to the speaker. This signal is playing various frequencies that will be harmonizing with the user input. The volume can be controlled by adding a potentionmeter to the volume output. 
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/classdamp.png?raw=true)
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/speaker.png?raw=true)
 
-The MEMS microphone is used to take input frequency data. For our device we do not need a high level of precision since we are just interpretting an overall frequency, and it is convenient for the processor to not have to filter out subtle noises that a more precise microphone circuit could pick up. For increased precision if the device is improved upon, we could incorperate an op-amp circuit or decoupling capacitor. 
+The MEMS microphone is used to take input frequency data. For our device we do not need a high level of precision since we are just interpretting an overall frequency, and it is convenient for the processor to not have to filter out subtle noises that a more precise microphone circuit could pick up. For increased precision if the device is improved upon, we could incorporate an op-amp circuit or decoupling capacitor. 
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/memsmic.png?raw=true)
 
@@ -49,7 +49,7 @@ The dip switches are used to control what interval the speaker will be harmonizi
 
 ### Source Code
 
-The following code implements the harmonizing tuner using the parts listed above. Since there are many componenets incorperated in out design, we use the RTOS library in order to run and manage different threads for each sub-process. 
+The following code implements the harmonizing tuner using the parts listed above. Since there are many componenets incorporated in out design, we use the RTOS library in order to run and manage different threads for each sub-process. 
 
     #include "mbed.h"
     #include "MAX4466.h"
@@ -315,7 +315,7 @@ The following code implements the harmonizing tuner using the parts listed above
     }
 
 
-​     The main thread using an FFT library to read analog microphone input and calculate freqency. The LCD thread updates the LCD screen based on the current frequency reading, performes note calculations, and displays the current closest note to the current frequency. This thread also changes the color of the notes in the scale depending on the state of the DIP switches. Finally, the third thread reads the values from the DIP switches and outputs calculated frequencies to the speaker depending on switch state.
+The main thread uses an FFT library to read analog microphone input and calculate freqency. The LCD thread updates the LCD screen based on the current frequency reading, performes note calculations, and displays the current closest note to the current frequency. This thread also changes the color of the notes in the scale depending on the state of the DIP switches. Finally, the third thread reads the values from the DIP switches and outputs calculated frequencies to the speaker depending on switch state.
 
 
 ### Videos
