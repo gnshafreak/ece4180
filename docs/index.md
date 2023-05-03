@@ -318,5 +318,14 @@ The following code implements the harmonizing tuner using the parts listed above
 ​     The main thread using an FFT library to read analog microphone input and calculate freqency. The LCD thread updates the LCD screen based on the current frequency reading, performes note calculations, and displays the current closest note to the current frequency. This thread also changes the color of the notes in the scale depending on the state of the DIP switches. Finally, the third thread reads the values from the DIP switches and outputs calculated frequencies to the speaker depending on switch state.
 
 
-### Photos/Videos
+### Videos
 
+[project showcase](https://drive.google.com/file/d/1mY5u1WiaA05HA8MtmO97CyndCMfCPHXk/view?usp=sharing)
+
+[chord synthesizer](https://drive.google.com/file/d/1GZkmW75rmcu3rBb8dnT_PoWiY3D1GndY/view?usp=share_link)
+
+### Conclusion
+
+Although we couldn’t combine the microphone input, single tone harmonizing, and LCD display with the chord synthesizer due to the mbed’s limited processing power, we were able to have each of the two processes run separately. In order to prevent feedback between the speaker and mic, we had to increase the physical distance between the two and control the speaker volume.
+
+**Future work** would include using a microcontroller with more processing power and integrating the different functionalities. We could also implement a faster frequency extraction method to decrease the computational load on the processor.
