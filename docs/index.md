@@ -17,17 +17,39 @@ Our project is both a harmonizer and a tuner that uses different components we b
 - 8x DIP Switches
 - 5V Power Supply
 
+The microconftrller will run the program that interfaces with the various I/O components in this device. 
+
+### Wiring Diagram
+
+![](https://github.com/gnshafreak/ece4180/blob/main/docs/pinout.png?raw=true)
+
+The Class D amplifier is used to amplify the PWM output signal going to the speaker. This singal is playing various frequencies that will be harmonizing with the user input. The volume can be controlled by adding a potentionmeter to the volume output. 
+
+![](https://github.com/gnshafreak/ece4180/blob/main/docs/classdamp.png?raw=true)
+
+![](https://github.com/gnshafreak/ece4180/blob/main/docs/speaker.png?raw=true)
+
+The MEMS microphone is used to take input frequency data. For our device we do not need a high level of precision since we are just interpretting an overall frequency, and it is convenient for the processor to not have to filter out subtle noises that a more precise microphone circuit could pick up. For increased precision if the device is improved upon, we could incorperate an op-amp circuit or decoupling capacitor. 
+
+![](https://github.com/gnshafreak/ece4180/blob/main/docs/memsmic.png?raw=true)
+
+The uLCD screen is used for the interface. It will display the current siwtches held on, and the freuqency and note being read by the microphone. It will also display a status box indicating weather or not a note is in tune. 
+
+![](https://github.com/gnshafreak/ece4180/blob/main/docs/lcd.png?raw=true)
+
+The dip switches are used to control what interval the speaker will be harmonizing at based on the input frequency from the microphone. 
+
 ### Schematic
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/circuit.png?raw=true)
 
-### Wiring Diagram
+
 
 ![](https://github.com/gnshafreak/ece4180/blob/main/docs/wiringdia.png?raw=true)
 
 ### Source Code
 
-The following code implements the harmonizing tuner using the parts listed above. 
+The following code implements the harmonizing tuner using the parts listed above. Since there are many componenets incorperated in out design, we use the RTOS library in order to run and manage different threads for each sub-process. 
 
 `#include "mbed.h"
 #include "MAX4466.h"
