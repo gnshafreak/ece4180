@@ -320,9 +320,9 @@ The following code implements the harmonizing tuner using the parts listed above
 
 ### Videos
 
-[project showcase](https://drive.google.com/file/d/1mY5u1WiaA05HA8MtmO97CyndCMfCPHXk/view?usp=sharing)
+<iframe src="https://drive.google.com/file/d/1GZkmW75rmcu3rBb8dnT_PoWiY3D1GndY/preview" width="640" height="480" allow="autoplay"></iframe>
 
-[chord synthesizer](https://drive.google.com/file/d/1GZkmW75rmcu3rBb8dnT_PoWiY3D1GndY/view?usp=share_link)
+<iframe src="https://drive.google.com/file/d/1mY5u1WiaA05HA8MtmO97CyndCMfCPHXk/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ### Conclusion
 
