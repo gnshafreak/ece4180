@@ -47,8 +47,6 @@ The dip switches are used to control what interval the speaker will be harmonizi
 
 
 
-![](https://github.com/gnshafreak/ece4180/blob/main/docs/wiringdia.png?raw=true)
-
 ### Source Code
 
 The following code implements the harmonizing tuner using the parts listed above. Since there are many componenets incorperated in out design, we use the RTOS library in order to run and manage different threads for each sub-process. 
@@ -62,8 +60,9 @@ The following code implements the harmonizing tuner using the parts listed above
     #include <string>
     #include <math.h>
     #include "I2S.h"
-    
-    
+
+
+​    
     DigitalIn pb1(p5);
     DigitalIn pb2(p6);
     DigitalIn pb3(p7);
@@ -88,8 +87,9 @@ The following code implements the harmonizing tuner using the parts listed above
     #define PI 3.14159
     std::string notes[] = {"C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"};
     float notefreqs[] = {16.35,17.32,18.35,19.45,20.60,21.93,23.12,24.50,25.96,27.50,29.14,30.87};
-    
-    
+
+
+​    
     volatile float readfreq = 0.00;
     volatile float octave = 0;
     volatile int note = 0;
@@ -97,10 +97,11 @@ The following code implements the harmonizing tuner using the parts listed above
     volatile int i = 0;
     volatile int m=0;
     volatile int counter = 0;
-    
-    
-    
-    
+
+
+​    
+​    
+​    
     void dopb(void const *arguments) {
         float freq1 = 0;
         float freq2 = 0;
@@ -167,8 +168,9 @@ The following code implements the harmonizing tuner using the parts listed above
             if (pb7) {freq[6] = RED;} else {freq[6] = WHITE;}
             if (pb8) {freq[7] = RED;} else {freq[7] = WHITE;}
             pc.printf("pb8: %f", pb8);
-            
-    
+
+
+​    
             uLCD.filled_circle(5, 122, 3, freq[0]);
             uLCD.filled_circle(20, 117, 3, freq[1]);
             uLCD.filled_circle(35, 112, 3, freq[2]);
@@ -180,8 +182,9 @@ The following code implements the harmonizing tuner using the parts listed above
     
         }
     }
-    
-    
+
+
+​    
     //Print frequencies of notes, detected freq, and circle display graphic to LCD
     void ulcd(void const *arguments) {
         int freq[] = {WHITE, WHITE, WHITE, WHITE, WHITE,WHITE, WHITE, WHITE};
@@ -240,8 +243,9 @@ The following code implements the harmonizing tuner using the parts listed above
             } else {
                 uLCD.filled_rectangle(30, 60, 100, 80, 0x00FF00);
             }
-            
-    
+
+
+​    
             //uLCD.printf("        %f", octave);
     
             if (pb1) {freq[0] = RED;} else {freq[0] = WHITE;}
@@ -261,15 +265,17 @@ The following code implements the harmonizing tuner using the parts listed above
             uLCD.filled_circle(80, 97, 3, freq[5]);
             uLCD.filled_circle(95, 92, 3, freq[6]);
             uLCD.filled_circle(110, 87, 3, freq[7]);
-    
-    
+
+
+​    
             prev_note = note;
             Thread::wait(1);
         }
     }
-    
-    
-    
+
+
+​    
+​    
     int main() {
         //set up pindetect
         pb1.mode(PullUp);
@@ -304,8 +310,9 @@ The following code implements the harmonizing tuner using the parts listed above
         float freq;
         osThreadSetPriority(osThreadGetId(), osPriorityHigh);
         //Loop and constantly be finding frequency of signal
-       
-    
+
+
+​    
         while (1) { 
             my_time.reset();
             my_time.start();
@@ -337,7 +344,7 @@ The following code implements the harmonizing tuner using the parts listed above
             Thread::wait(100);
         }  
     }
-    
+
 
 ​     The main thread using an FFT library to read analog microphone input and calculate freqency. The LCD thread updates the LCD screen based on the current frequency reading, performes note calculations, and displays the current closest note to the current frequency. This thread also changes the color of the notes in the scale depending on the state of the DIP switches. Finally, the third thread reads the values from the DIP switches and outputs calculated frequencies to the speaker depending on switch state.
 
